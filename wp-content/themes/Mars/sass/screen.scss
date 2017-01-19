@@ -1,0 +1,562 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "variables";
+@import "mixins";
+
+
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url('../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url('../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+}
+
+body{
+  @include transition(0.5s);
+}
+
+a{
+  text-decoration: none;
+  cursor:pointer;
+  &:hover{
+    text-decoration: none;
+    cursor:pointer;
+  }
+}
+
+.top-section {
+  height: 100vh;
+  @include display-flex;
+  justify-content: center;
+  .menu {
+    position:absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 30%;
+    background: rgba(255,000,000, 0.8);
+    display: none;
+    ul{
+      height: 100vh;
+    }
+    li {
+      height: 25%;
+      &:hover {
+        background: #fff;
+      }
+    }
+  }
+  .container {
+    position:absolute;
+    z-index:5;
+    height: 100vh;
+    margin: 0 auto;
+    header {
+      height: 60px;
+      @include display-flex;
+      justify-content: space-between;
+      align-items: center;
+      .right-side-top {
+        p {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  .content {
+    @include display-flex;
+    align-items: center;
+    overflow: hidden;
+    height: -webkit-calc(100% - 60px);
+
+    //Carousel STLYE
+    //.owl-carousel {
+    //  //width: 300px;
+    //  //height: 400px;
+    //  //transform: rotate(90deg);
+    //  h2 {
+    //    @include font($bold, 40px, #000);
+    //    text-transform: uppercase;
+    //    text-align: left;
+    //    margin-bottom: 20px;
+    //  }
+    //  p{
+    //    @include font($regular, 14px, #92a1a5);
+    //    text-align: left;
+    //    line-height: 30px;
+    //  }
+    //  //.item {
+    //  //  transform: rotate(-90deg);
+    //  //  width: 300px;
+    //  //}
+    //}
+    // .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    //  background: #ff343d; }
+    //Carousel STYLE END
+  }
+}
+.slider {
+  @include display-flex;
+  align-items: center;
+}
+
+  .dots{
+    display: block;
+    .active {
+      background-color: #ff0000 !important;
+    }
+    .item {
+      margin: 15px 0;
+      width: 10px;
+      height: 10px;
+      background-color: #e1e1e1;
+      border-radius: 50%;
+      &:hover {
+        background-color: #ff0000;
+      }
+      a {
+        display: block;
+      }
+    }
+  }
+
+  .article-div {
+    margin-left: 30px;
+    .item {
+      display: none;
+      max-width: 400px;
+      h2 {
+        @include font($bold, 40px, #000);
+        text-transform: uppercase;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+      p{
+        @include font($regular, 14px, #92a1a5);
+        text-align: left;
+        line-height: 30px;
+      }
+    }
+    .active {
+      display: block;
+    }
+  }
+
+
+.wrap-schroll {
+   .schroll{
+    @include font($bold, 18px, #000);
+    position: absolute;
+    bottom: 150px;
+    left: -50px;
+    display: block;
+    transform: rotate(-90deg);
+    -webkit-animation: 5s down infinite;
+  }
+  @-webkit-keyframes down {
+    50% {bottom: 100px}
+  }
+}
+
+
+.gray {
+  float: left;
+  width:60%;
+  height: 100vh;
+  background: #eff2f6;
+}
+
+.red {
+  @include display-flex;
+  align-items: center;
+  float: right;
+  width:40%;
+  height: 100vh;
+  background: #ff343d;
+  div {
+    @include display-flex;
+    position: absolute;
+    z-index: 3;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    margin-left: -200px;
+    border-radius: 50%;
+    img {
+     -webkit-transform: scale(1.5, 1.5);
+    }
+  }
+  ul {
+    @include display-flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    padding-left: 100px;
+    li {
+      @include font($bold, 180px, #ff343d);
+      text-shadow: 8px 14px 95px rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
+      transform: rotate(90deg);
+    }
+  }
+}
+.left-side-top {
+  @include display-flex;
+  align-items: center;
+    h1 {
+      @include font($bold, 24px, #000);
+      text-transform: uppercase;
+    }
+    a {
+      display: inline-block;
+    }
+    button {
+      margin-left: 20px;
+      background: transparent;
+      border: none;
+      span{
+        @include font($regular, 14px, #92a1a5);
+        &:before {
+          content: "\e008";
+        }
+        &:hover {
+          @include transition(0.5s);
+          color: red;
+        }
+      }
+    }
+}
+
+.right-side-top {
+  @include display-flex;
+  align-items: center;
+  p{
+    @include font($regular, 16px, #fff);
+    display: inline-block;
+    text-transform: uppercase;
+    border-bottom: 1px solid red;
+  }
+  button {
+    background-color: transparent;
+    background: none;
+    border: 1px solid transparent;
+    & span {
+      display: block;
+      width: 24px;
+      height: 3px;
+      margin-bottom: 3px;
+      background-color: #fff;
+    }
+  }
+}
+
+.fly {
+  @include display-flex;
+  justify-content: center;
+  position: relative;
+  .left-side-fly {
+    @include display-flex;
+    justify-content: flex-end;
+    align-items: center;
+    float: left;
+    width:30%;
+    height: 400px;
+    background: url("../images/tap-bg.png") no-repeat;
+    background-size: cover;
+    img {
+      height: 70%;
+    }
+    .tap {
+      position: absolute;
+      padding-right: 5%;
+      h2{
+        @include font($bold, 48px, #000);
+        margin-bottom: 20px;
+      }
+      p {
+        @include font($regular, 14px, #92a1a5);
+      }
+    }
+  }
+  
+  .right-side-fly {
+    float: right;
+    width:70%;
+    height: 400px;
+    background: url("../images/landscape.png") no-repeat;
+    background-size: cover;
+    .hover-div {
+      @include display-flex;
+      @include transition(0.5s);
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60%;
+      &:hover button {
+        transform: rotate(0);
+        right: 0;
+        margin-right: 20px;
+      }
+      &:hover {
+        @include transition(0.5s);
+        background: rgba(0, 0, 0, 0.5);
+      }
+      &:hover .fly-text {
+        @include transition(0.6s);
+        background: none;
+      }
+    }
+    .fly-text {
+      @include display-flex;
+      @include transition(0.3s);
+      align-items: center;
+      width: 50%;
+      padding-left: 30px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      h2 {
+        @include font($bold, 48px, #fff);
+      }
+    }
+    button {
+      @include button-style(#fff);
+      @include font($bold, 18px, #000);
+      @include transition(0.5s);
+      text-transform: uppercase;
+      border: 2px solid transparent;
+      position: absolute;
+      right: -90px;
+      transform: rotate(-90deg);
+      &:hover {
+        color: #fff;
+        background: transparent;
+        border:2px solid #fff;
+      }
+    }
+  }
+
+}
+
+.features {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  h2 {
+    @include font($bold, 48px, #000);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  ul {
+    @include display-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    li {
+      margin: 30px 10px;
+      @include transition(0.5s);
+      a {
+        display: block;
+      }
+      span {
+        @include font($regular, 30px, #000);
+      }
+    }
+    .tech{
+      &:before {
+        @include features-icons(100px, 100px, url("../images/new-technology.png"));
+        @include transition(0.5s);
+      }
+    }
+    .signal{
+      &:before {
+        @include features-icons(100px, 100px, url("../images/good-signal.png"));
+        @include transition(0.5s);
+      }
+    }
+    .easy{
+      &:before {
+        @include features-icons(100px, 100px, url("../images/easy-to-use.png"));
+        @include transition(0.5s);
+      }
+    }
+    .visibility{
+      &:before {
+        @include features-icons(100px, 100px, url("../images/visibility.png"));
+        @include transition(0.5s);
+      }
+    }
+
+  }
+  li:hover .tech:before, li:hover .signal:before, li:hover .easy:before, li:hover .visibility:before{
+    transform: rotate(360deg);
+    @include transition(0.5s);
+  }
+}
+
+.generation-vision {
+  @include display-flex;
+  position: relative;
+  justify-content: center;
+  overflow: hidden;
+
+  .container {
+    @include display-flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    h2 {
+      @include font($regular, 50px,#fff);
+      margin-bottom: 30px;
+      span {
+        color: #ff343d;
+      }
+    }
+    button {
+      @include font($bold, 18px, #fff);
+      @include transition(0.5s);
+      @include button-style(transparent);
+      border: 2px solid #fff ;
+      text-transform: uppercase;
+      &:hover {
+        color: #ff343d;
+        background: #fff;
+      }
+    }
+  }
+  .left-side-vision {
+    float: left;
+    width: 50%;
+    padding: 300px 0;
+    background: url("../images/pult.jpg")center no-repeat;
+    background-size: cover;
+  }
+  .right-side-vision {
+    float: right;
+    width: 50%;
+    padding: 300px 0;
+    background: #232323 url("../images/icon-dron.png") right no-repeat;
+    background-size: contain;
+  }
+}
+
+.generation-flying {
+  .container {
+    @include display-flex ;
+    align-items: center;
+    div {
+      position: relative;
+      z-index: 1;
+      padding: 200px 0;
+      h2 {
+        @include font($regular, 50px,#232323);
+        margin-bottom: 30px;
+        span {
+          color: #ff343d;
+        }
+
+      }
+
+      button {
+        @include font($bold, 18px, #000);
+        @include transition(0.5s);
+        @include button-style(transparent);
+        border: 2px solid #eff2f6 ;
+        text-transform: uppercase;
+        &:hover {
+          color: #ff343d;
+          background: #eff2f6;
+        }
+      }
+    }
+  }
+  img {
+    position: absolute;
+    right: 0;
+    max-width: 50%;
+  }
+}
+
+.journey {
+  background: url("../images/boats-bg.jpg") center no-repeat;
+  background-size: cover;
+  padding-top: 500px;
+  h2{
+    @include font($bold, 92px,#fff);
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  button {
+    @include font($bold, 18px, #318f76);
+    @include transition(0.5s);
+    @include button-style(#fff);
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    //margin-bottom: 200px;
+    margin: 0 auto 200px auto;
+    &:hover {
+      color: #fff;
+      background-color: transparent;
+      border: 2px solid #fff;
+    }
+  }
+
+  .text-show {
+    text-align: center;
+    color: #fff;
+  }
+}
+
+footer {
+  padding: 100px 0;
+  .phantom {
+    @include display-flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      @include font($bold, 150px, #fff);
+      text-shadow: 8px 14px 95px rgba(0, 0, 0, 0.1);
+      text-transform: uppercase;
+      position: absolute;
+      z-index: -1;
+    }
+    .copyright {
+      text-align: center;
+      h1 {
+        @include font($bold, 24px, #000);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      span{
+        @include font($regular, 14px,#92a1a5);
+      }
+    }
+  }
+
+}
+
+.text-show {
+  @include font($regular, 14px, #92a1a5);
+  display: none;
+  margin: 20px 0;
+}
+
+@import "responsive";

@@ -1,0 +1,40 @@
+@mixin display-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin font ($font-family, $font-size, $color) {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $color;
+}
+
+@mixin features-icons ($width, $height, $url) {
+  display: block;
+  content: "";
+  width: $width;
+  height: $height;
+  background: $url center no-repeat;
+  margin: 0 auto 30px auto;
+}
+
+@mixin transition ($time) {
+  -webkit-transition: $time;
+  -moz-transition: $time;
+  -ms-transition: $time;
+  -o-transition: $time;
+  transition: $time;
+}
+
+@mixin button-style ($bg-color) {
+  display: block;
+  width: 180px;
+  height: 55px;
+  border-radius: 25px;
+  background-color: $bg-color;
+  border: none;
+  outline : none;
+}
