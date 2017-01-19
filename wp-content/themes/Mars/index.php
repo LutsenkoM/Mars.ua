@@ -67,7 +67,7 @@
             <h2>Tap to fly</h2>
             <p>Lorem ipsum dolor sit amet.</p>
         </div>
-        <img src="images/gray-circle.png" alt="" class="img-responsive">
+        <img src="<?php bloginfo('template_url') ?>/images/gray-circle.png" alt="" class="img-responsive">
     </a>
     <div class="right-side-fly">
         <div id="hover-div" class="hover-div">
@@ -127,7 +127,7 @@
                 dolor.</p>
             <button class="click">Products</button>
         </div>
-        <img src="images/drone2.png" alt="" class="img-responsive">
+        <img src="<?php bloginfo('template_url') ?>/images/drone2.png" alt="" class="img-responsive">
     </div>
 </section>
 

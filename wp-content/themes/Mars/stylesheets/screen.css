@@ -410,6 +410,7 @@ a:hover {
 .fly .right-side-fly .hover-div:hover button {
   transform: rotate(0);
   right: 0;
+  margin-right: 20px;
 }
 .fly .right-side-fly .hover-div:hover {
   -webkit-transition: 0.5s;
