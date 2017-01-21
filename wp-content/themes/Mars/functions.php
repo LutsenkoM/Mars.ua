@@ -3,7 +3,7 @@
 function load_style() {
     wp_enqueue_style('bootstrap.min.css', get_template_directory_uri(). '/bootstrap-3.3.7-dist/css/bootstrap.min.css');
     wp_enqueue_style('bootstrap-theme.min.css', get_template_directory_uri() . '/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css');
-    wp_enqueue_style('style', get_template_directory_uri() . '/stylesheets/screen.css');
+    wp_enqueue_style('screen.css', get_template_directory_uri() . '/stylesheets/screen.css');
 }
 
 add_action ('wp_enqueue_scrips', 'load_style');
