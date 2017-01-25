@@ -10,11 +10,6 @@
     </div>
 </footer>
 
-<!--Scripts-->
-<script src=" <?php bloginfo('template_url') ?>/js/jquery-3.1.1.min.js"></script>
-<script src=" <?php bloginfo('template_url') ?>/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<!--<script src="OwlCarousel2-2.2.0/dist/owl.carousel.min.js"></script>-->
-<script src=" <?php bloginfo('template_url') ?>/js/main.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>
